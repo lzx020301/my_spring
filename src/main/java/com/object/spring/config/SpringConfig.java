@@ -1,6 +1,7 @@
 package com.object.spring.config;
 
 import com.object.spring.annotation.ComponentScan;
+import com.object.spring.ioc.Config;
 
 /**
  * @author Object
@@ -8,5 +9,5 @@ import com.object.spring.annotation.ComponentScan;
  * @date 2024/3/1
  */
 @ComponentScan(value = {"com.object.spring.component"})
-public class SpringConfig {
+public class SpringConfig implements Config {
 }

@@ -34,7 +34,7 @@ public class ApplicationContext {
 
     private final ArrayList<Class<?>> aspects = new ArrayList<>(16);
 
-    public ApplicationContext(Class<SpringConfig> configClass){
+    public ApplicationContext(Class<? extends Config> configClass){
         beanDefinitionScan(configClass);
         //初始化单例池
         initSingletonObjects();
@@ -52,7 +52,7 @@ public class ApplicationContext {
         }
     }
 
-    private void beanDefinitionScan(Class<SpringConfig> configClass) {
+    private void beanDefinitionScan(Class<? extends Config> configClass) {
         //获取配置类上的注解
         ComponentScan componentScan = configClass.getDeclaredAnnotation(ComponentScan.class);
         //获取注解上的参数
